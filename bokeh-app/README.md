@@ -1,4 +1,4 @@
-Part 1: GUI Application
+## Part 1: GUI Application
 
 Import necessary libraries:
 
@@ -34,7 +34,7 @@ Start the Tkinter main event loop.
 
 
 
-Part 2: Depth-Based Background Blur (cv_depth_blur.py)
+## Part 2: Depth-Based Background Blur (cv_depth_blur.py)
 
 Import libraries:
 
@@ -79,60 +79,49 @@ This effectively segments the image into 4 depth ranges.
 g. Selective Blurring:
 
 For each depth region (except the subject), apply Gaussian blur using cv.GaussianBlur.
-
 The blur amount (blur_dict) and region order (idx_dict) are predefined based on the subject index.
-
 The blurred regions are then combined with the original image to create the final output.
 
 
 
-Computer Vision Concepts:
+## Computer Vision Concepts:
 
-Feature Detection and Matching (SIFT):
+### Feature Detection and Matching (SIFT):
 
 Keypoints are distinctive points in an image (corners, blobs, etc.).
-
 Descriptors are vectors that describe the neighborhood around keypoints.
-
 Matching finds correspondences between keypoints in different images.
 
 
-Epipolar Geometry:
+### Epipolar Geometry:
 
 Describes the geometry between two views of the same 3D scene.
-
 The fundamental matrix F encapsulates this geometry.
-
 Epipolar lines are lines in one image where the corresponding point in the other image must lie.
 
 
-Stereo Rectification:
+### Stereo Rectification:
 
 Transforms stereo images so that corresponding points lie on the same horizontal scanline.
-
 Makes stereo matching a 1D search problem instead of 2D, improving efficiency and accuracy.
 
 
-Stereo Matching and Disparity:
+### Stereo Matching and Disparity:
 
 Finds corresponding points between stereo images.
-
 Disparity is higher for closer objects and lower for distant ones, giving depth information.
-
 SGBM is a robust method that considers both local (block matching) and global (energy minimization) constraints.
 
 
-Image Segmentation:
+### Image Segmentation:
 
 Partitioning an image into multiple segments or regions.
-
 Here, multi-Otsu thresholding segments the disparity map based on depth.
 
 
-Image Filtering:
+### Image Filtering:
 
 Gaussian blur is a linear filter that reduces image noise and detail.
-
 The kernel size ((5, 5), (9, 9), etc.) affects the blur strength.
 
 
